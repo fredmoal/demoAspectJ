@@ -1,0 +1,14 @@
+La démo du cours de MAC sur AspectJ
+
+== References
+
+Mon cours sur confluence !
+
+La doc : https://eclipse.org/aspectj/docs.php
+
+
+== Remarques
+
+Pensez à ajouter le support AspectJ dans votre projet IntelliJ
+en choisissant Ajc dans settings -> java compiler,
+avec comme chemin d'accès m2\repository\org\aspectj\aspectjtools\1.8.10\aspectjtools-1.8.10.jar
