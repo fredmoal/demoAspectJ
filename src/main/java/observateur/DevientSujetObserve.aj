@@ -8,7 +8,7 @@ import java.util.List;
  */
 public aspect DevientSujetObserve {
     private List<Observateur> Point.observateurs =
-            new ArrayList<>();
+            new ArrayList<Observateur>();
     private void Point.notifieObservateurs() {
         for(Observateur o:observateurs) {
             o.actualiser();
