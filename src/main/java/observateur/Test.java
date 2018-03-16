@@ -6,12 +6,15 @@ package observateur;
 public class Test {
     public static void main(String... args){
         Point p = new Point(1.0, 2.0);
-        p.ajouteObservateur( new ObservateurPoint(p) );
+
+        Observateur observ = new ObservateurPoint(p);
+        p.ajouteObservateur(observ);
 
         p.setY(3.0);
-
         p.getX();
-
         p.setX(-2.5);
+
+        p.retireObservateur(observ);
+        p.setY(-7);
     }
 }

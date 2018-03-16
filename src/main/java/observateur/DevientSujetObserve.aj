@@ -18,7 +18,7 @@ public aspect DevientSujetObserve {
         observateurs.add(o);
     }
     public void Point.retireObservateur(Observateur o) {
-        observateurs.add(o);
+        observateurs.remove(o);
     }
     pointcut setting(Point p) :
         execution( void Point.set*(*) ) && this ( p );

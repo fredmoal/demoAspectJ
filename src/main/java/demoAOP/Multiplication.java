@@ -1,8 +1,5 @@
 package demoAOP;
 
-import lombok.AllArgsConstructor;
-import lombok.Data;
-
 /**
  * Created by Fred on 14/03/2017.
  */
