@@ -1,18 +1,13 @@
 package visiteur;
 
-public class Entier extends Expression {
+public class Entier implements Expression {
 	private int value;
 	
 	public Entier(int value) {
 		this.value = value;
 	}
-	
-	public void setValue(int value) {
-		this.value = value;
-	}
-	
-	@Override
-	public int eval() {
+
+	public int getValue() {
 		return value;
 	}
 }

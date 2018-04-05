@@ -17,14 +17,3 @@ public class Visiteur<U, R> {
                 .apply(receiver);
     }
 }
-
-/*
-public class Visiteur<R> {
-    public <T> Visiteur<R> when(Class<? extends T> type, Function<? super T, ? extends R> fun) {
-        throw new UnsupportedOperationException("TODO");
-    }
-    public R call(Object receiver) {
-        throw new UnsupportedOperationException("TODO");
-    }
-}
-*/
