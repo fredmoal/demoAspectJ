@@ -1,4 +1,4 @@
-package demoAOP;
+package cache;
 
 public class Main {
 
@@ -23,7 +23,9 @@ public class Main {
 		// qui va conduire à invalider son cache ainsi que celui de plus2 et top
 		((Number)cinq).setValue(4);
 		System.out.println("- troisieme appel");
-		System.out.println(top.eval());
+		final int eval = top.eval();
+		System.out.println(eval);
+
 	}
 
 }

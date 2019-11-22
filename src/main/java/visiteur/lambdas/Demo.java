@@ -1,4 +1,9 @@
-package visiteur;
+package visiteur.lambdas;
+
+import visiteur.Addition;
+import visiteur.Entier;
+import visiteur.Expression;
+import visiteur.Multiplication;
 
 public class Demo {
     public static void main(String[] args) {
@@ -6,6 +11,7 @@ public class Demo {
         Expression top = new Multiplication(
                                 new Entier(2),
                                 new Addition(plus, new Entier(7)));
+
 
         Visiteur<Expression,String> visiteur = new Visiteur<>();
         visiteur.when(Entier.class, num -> ""+num.getValue())

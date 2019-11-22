@@ -1,4 +1,4 @@
-package base;
+package annotations;
 
 import org.aspectj.lang.JoinPoint;
 import org.aspectj.lang.ProceedingJoinPoint;
@@ -14,20 +14,20 @@ import java.util.Date;
 @Aspect
 public class MesAspects {
 
-    @Before("execution(* base.ClientDao.*(..))")
+    @Before("execution(* annotations.ClientDao.*(..))")
     public void logBefore(JoinPoint joinPoint) {
         System.out.print("+++ log : "+new Date());
         System.out.print(" appel de " + joinPoint.getSignature().getName());
         System.out.println(" +++");
     }
-    @AfterReturning(pointcut="execution(* base.ClientDao.addClientReturnValue(..))",returning="result")
+    @AfterReturning(pointcut="execution(* annotations.ClientDao.addClientReturnValue(..))",returning="result")
     public void logAfterReturning(JoinPoint joinPoint, Object result) {
         System.out.print("+++ log :");
         System.out.print(" retour de " + joinPoint.getSignature().getName());
         System.out.print(" avec la valeur : " + result);
         System.out.println(" +++");
     }
-    @Around("execution(* base.ClientDao.addClientAround(..))")
+    @Around("execution(* annotations.ClientDao.addClientAround(..))")
     public void logAround(ProceedingJoinPoint joinPoint) throws Throwable {
         System.out.print("+++ log arround : ");
         System.out.print("interception de : " + joinPoint.getSignature().getName());
@@ -37,14 +37,14 @@ public class MesAspects {
         System.out.println("   +++ retour");
     }
 
-    @AfterThrowing(pointcut="execution(* base.ClientDao.addClientThrowException(..))", throwing = "t")
+    @AfterThrowing(pointcut="execution(* annotations.ClientDao.addClientThrowException(..))", throwing = "t")
     public void logException(JoinPoint joinPoint, Throwable t) {
         System.err.println("+++ log Exception levee par "+joinPoint.getSourceLocation()+".  l'Exception est : "+t+" +++");
     }
 
 
 
-//    @Around("execution(* base.ClientDao.addClientAround(..))")
+//    @Around("execution(* annotations.ClientDao.addClientAround(..))")
 //    public void logAround(ProceedingJoinPoint joinPoint) throws Throwable {
 //        System.out.print("+++ log arround : ");
 //        System.out.print("interception de : " + joinPoint.getSignature().getName());

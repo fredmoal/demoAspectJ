@@ -1,4 +1,4 @@
-package base;
+package annotations;
 
 /**
  * Created by Fred on 17/02/2015.

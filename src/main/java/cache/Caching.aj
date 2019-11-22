@@ -1,4 +1,4 @@
-package demoAOP;
+package cache;
 
 public aspect Caching {
 	private int Expression.cache;
@@ -62,6 +62,14 @@ public aspect Caching {
 		this(exp) && execution(Plus.new(Expression,Expression));
 	
 	after(Plus exp) : PlusCreation(exp) {
+		exp.getLeftExpression().setAncestor(exp);
+		exp.getRightExpression().setAncestor(exp);
+	}
+
+	pointcut MultCreation(Multiplication exp):
+			this(exp) && execution(Multiplication.new(Expression,Expression));
+
+	after(Multiplication exp) : MultCreation(exp) {
 		exp.getLeftExpression().setAncestor(exp);
 		exp.getRightExpression().setAncestor(exp);
 	}
